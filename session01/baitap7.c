@@ -15,6 +15,5 @@ int main(){
 //Độ phức tạp về thời gian = 0(n^2)
 //Độ phức tạp về không gian = 0(1)
 //    c2:
-
     return 0;
 }
