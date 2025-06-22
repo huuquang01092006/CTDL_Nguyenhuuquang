@@ -5,7 +5,7 @@ int main(){
     int flag= -1;
     for (int i = 0; i < n - 1; ++i) {
         for (int j = i + 1; j < n; ++j) {
-            if(arr[i] > arr[j]){
+            if(arr[i] >= arr[j]){
                 flag =1;
             } else{
                 flag = -1;
