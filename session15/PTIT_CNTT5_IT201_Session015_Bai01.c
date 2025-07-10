@@ -17,9 +17,13 @@ int isFull(Queue *q) {
     return q->rear == MAX - 1;
 }
 
+int isEmpty(Queue *q) {
+    return q->front > q->rear;
+}
+
 int enqueue(Queue *q, int value) {
     if (isFull(q)) {
-        printf("Hang doi da day khong the them vao phan tu %d.\n", value);
+        printf("hang doi day %d.\n", value);
         return 0;
     }
     q->rear++;
@@ -27,21 +31,33 @@ int enqueue(Queue *q, int value) {
     return 1;
 }
 
+void printQueue(Queue *q) {
+    if (isEmpty(q)) {
+        printf("hang doi trong.\n");
+        return;
+    }
+    for (int i = q->front; i <= q->rear; i++) {
+        printf("%d ", q->data[i]);
+    }
+    printf("\n");
+}
+
 int main() {
     Queue myQueue;
 
     initQueue(&myQueue);
-    printf("Queue initialized.\n");
-    printf("Front index: %d\n", myQueue.front);
-    printf("Rear index: %d\n", myQueue.rear);
+    printf("hang doi da duoc khoi tao.\n");
+    printf("chi so Front: %d\n", myQueue.front);
+    printf("chi so Rear: %d\n", myQueue.rear);
 
     int elementToAdd = 10;
     if (enqueue(&myQueue, elementToAdd)) {
-        printf("Da them phan tu %d vao hang doi.\n", elementToAdd);
+        printf("da them phan tu %d vao hang doi.\n", elementToAdd);
     }
 
-    printf("Front index: %d\n", myQueue.front);
-    printf("Rear index: %d\n", myQueue.rear);
+    printQueue(&myQueue);
+    printf("chi so Front: %d\n", myQueue.front);
+    printf("chi so Rear: %d\n", myQueue.rear);
 
     return 0;
 }

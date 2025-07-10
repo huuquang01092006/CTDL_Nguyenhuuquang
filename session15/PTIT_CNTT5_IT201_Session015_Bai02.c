@@ -14,9 +14,9 @@ void initQueue(Queue *q, int cap) {
     q->rear = -1;
     q->capacity = cap;
 }
+
 void enqueueFromInput(Queue *q) {
     int value;
-
     scanf("%d", &value);
 
     if (q->rear + 1 >= q->capacity) {
@@ -36,11 +36,12 @@ void enqueueFromInput(Queue *q) {
     printf("],\n   front = %d,\n   rear = %d,\n   capacity = %d\n}\n\n",
            q->front, q->rear, q->capacity);
 }
+
 int main() {
     Queue q;
     initQueue(&q, 5);
 
-    printf("queue = {\n   array = [],\n   front = 0,\n   rear = -1,\n   capacity = 5\n},\n\n");
+    printf("queue = {\n   array = [],\n   front = 0,\n   rear = -1,\n   capacity = 5\n}\n\n");
 
     for (int i = 0; i < 5; i++) {
         printf("Nhap phan tu thu %d: ", i + 1);

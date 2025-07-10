@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +26,7 @@ int isFull(Queue *q) {
 
 void enqueue(Queue *q) {
     if (isFull(q)) {
-        printf("Hang doi day. Khong the them khach moi.\n\n");
+        printf("Hang doi da day. Khong the them khach moi.\n\n");
         return;
     }
 
@@ -44,7 +43,7 @@ void enqueue(Queue *q) {
 
 void serve(Queue *q) {
     if (isEmpty(q)) {
-        printf("Hang doi rong.\n\n");
+        printf("Hang doi rong. Khong co khach de phuc vu.\n\n");
         return;
     }
 
@@ -86,8 +85,12 @@ int main() {
             case 1: enqueue(&q); break;
             case 2: serve(&q); break;
             case 3: displayQueue(&q); break;
-            case 4: printf("Ket thuc chuong trinh.\n"); return 0;
-            default: printf("Lua chon khong hop le.\n\n"); break;
+            case 4:
+                printf("Ket thuc chuong trinh. Tam biet!\n");
+                return 0;
+            default:
+                printf("Lua chon khong hop le. Vui long thu lai.\n\n");
+                break;
         }
     }
 }
