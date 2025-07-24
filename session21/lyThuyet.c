@@ -49,13 +49,13 @@ Node* createNode(int value){
 //ham tao lien ket
 Node* addLink(int u, int v){
 //    tao node moi
-    Node* newNode = createNode(u);
+    Node* newNode = createNode(v);
 //    lien ket voi phan tu ban dau
     newNode->next = link[u];
 //    newnode thanh node dau tien
     link[u] = newNode;
 //    lap lai b1
-    newNode = createNode(v);
+    newNode = createNode(u);
     newNode->next = link[v];
     link[v] = newNode;
 }
